@@ -11,6 +11,8 @@ use Chikeet\CartSample\Utils\Arrays\ArrayChecker;
 
 class CartService
 {
+	private const DEFAULT_PRODUCT_CLASS = DefaultProduct::class;
+	
 	
 	/**
 	 * @var CartItem[]
@@ -34,7 +36,7 @@ class CartService
 	 * @throws ClassNotFoundException
 	 * @throws ClassNotImplementingRequiredInterfaceException
 	 */
-	public function __construct(IStorage $storage, string $productClass = DefaultProduct::class)
+	public function __construct(IStorage $storage, string $productClass = self::DEFAULT_PRODUCT_CLASS)
 	{
 		$this->storage = $storage;
 		
